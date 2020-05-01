@@ -14,6 +14,7 @@
 - Extract **_application.yml_** file
     - This is required to run the app locally
     - This file is password protected
+    - 7z cli should be installed in your machine
     - Do you need **_password_**? [Contact developer](mailto:kcshettar@gmail.com)
 ```
 $ sh extract_application-yml.sh 
