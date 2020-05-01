@@ -1,5 +1,5 @@
 # starter
-## Description: THINKING SOMETHING BIG..!!
+## Description: SPRING BOOT STARTER TEMPLATE..!!
 
 <!-- Project configuration -->
 ## Java SpringBoot using Gradle
@@ -29,6 +29,16 @@ $ ./gradlew test
 - Clean, assemble & test
 ```
 $ ./gradlew clean build
+```
+
+## Database
+### In memory h2 database
+```
+http://localhost:{{server.port}}/h2-console
+Driver Class: org.h2.Driver
+JDBC URL: jdbc:h2:mem:testdb
+User Name: sa
+Password: <BLANK>
 ```
 
 ## Documentation

@@ -1,0 +1,24 @@
+# -----tomcat server port
+server:
+  port: 8080
+
+# -----logging and debugging level
+debug: false
+logging:
+  level:
+    ROOT: INFO
+
+# -----spring configuration
+spring:
+  # main:
+    # allow-bean-definition-overriding: true
+  flyway:
+    enabled: false
+  h2:
+    username: sa
+    password: sa
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      database-platform: org.hibernate.dialect.SQLServer2012Dialect
