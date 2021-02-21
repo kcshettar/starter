@@ -32,6 +32,7 @@ dependencies {
 	implementation 'org.springframework.security:spring-security-test'
 	implementation 'io.pivotal.spring.cloud:spring-cloud-services-starter-config-client'
 	implementation 'org.springframework.cloud:spring-cloud-config-server'
+	implementation 'org.flywaydb:flyway-core'
 	compile 'net.logstash.logback:logstash-logback-encoder:6.3'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
