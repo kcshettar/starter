@@ -3,11 +3,6 @@
 
 <!-- Project configuration -->
 ## Java SpringBoot using Gradle
-### Versions
-- Java: jdk-11.0.7
-- org.springframework.boot: 2.2.6.RELEASE
-- io.spring.dependency-management: 1.0.9.RELEASE
-- JUnit: 5
 
 <!-- Developer guide -->
 ## Run application locally
