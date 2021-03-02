@@ -1,12 +1,13 @@
 package com.kcs.starter.exceptions.base;
 
-import org.springframework.cloud.cloudfoundry.com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.http.HttpStatus;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
