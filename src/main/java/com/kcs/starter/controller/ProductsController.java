@@ -3,12 +3,8 @@ package com.kcs.starter.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.validation.Valid;
-import javax.validation.constraints.Null;
-
 import com.kcs.starter.exceptions.InvalidUserResourceInputException;
 import com.kcs.starter.exceptions.ProductsNotFoundException;
-import com.kcs.starter.exceptions.base.ApiException;
 import com.kcs.starter.model.Products;
 import com.kcs.starter.reponse.ProductsResponse;
 import com.kcs.starter.reponse.ValidResponse;
@@ -53,23 +49,23 @@ public class ProductsController {
     private void validateAddProduct(Products products) throws InvalidUserResourceInputException {
         Map<String, String> errorMap = new HashMap<String, String>();
         if (StringUtils.isEmpty(products.getName())) {
-            errorMap.put("name", "Invalid");
+            errorMap.put("Name", "Invalid");
         }
 
         if (StringUtils.isEmpty(products.getDetails())) {
-            errorMap.put("details", "Invalid");
+            errorMap.put("Details", "Invalid");
         }
 
-        if (StringUtils.isEmpty(products.getEmail()) || !EmailValidator.validate(products.getEmail())) {
-            errorMap.put("name", "Invalid");
+        if (StringUtils.isEmpty(products.getSellerEmail()) || !EmailValidator.validate(products.getSellerEmail())) {
+            errorMap.put("Email", "Invalid");
         }
 
-        if (products.getPrice() == null) {
-            errorMap.put("price", "Invalid");
+        if (products.getMinPrice() == null) {
+            errorMap.put("MinPrice", "Invalid");
         }
 
         if (products.getBiddingLastDate() == null) {
-            errorMap.put("biddingLastDate", "Invalid");
+            errorMap.put("BiddingLastDate", "Invalid");
         }
 
         if (!errorMap.isEmpty()) {

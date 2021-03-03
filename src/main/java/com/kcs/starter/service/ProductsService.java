@@ -1,9 +1,6 @@
 package com.kcs.starter.service;
 
-import java.sql.SQLException;
-import java.time.Instant;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -32,9 +29,9 @@ public class ProductsService {
 
     public ValidResponse addProduct(Products products) {
         Map<String, String> additionalInfo = new HashMap<String, String>();
-        additionalInfo.put("productId", products.getId());
 
-        productRepository.save(products);
+        String productId = productRepository.save(products).getId();
+        additionalInfo.put("ProductId", productId);
 
         ValidResponse validResponse = new ValidResponse("product posted", additionalInfo);
         return validResponse;
@@ -71,8 +68,8 @@ public class ProductsService {
         for (Products product : products) {
             LocalDateTime biddingLastDate = product.getBiddingLastDate();
             LocalDateTime localDateTime = LocalDateTime.now();
-            if (product.isSellStatus() == false && biddingLastDate.isBefore(localDateTime)) {
-                product.setSellStatus(true);
+            if (product.isBidStatus() == false && biddingLastDate.isBefore(localDateTime)) {
+                product.setBidStatus(true);
             }
         }
 

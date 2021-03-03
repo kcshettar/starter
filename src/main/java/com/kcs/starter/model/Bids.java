@@ -21,9 +21,9 @@ import lombok.Setter;
 
 @Entity
 @NoArgsConstructor
-@Table(name = "products")
+@Table(name = "bids")
 @Getter
-public class Products {
+public class Bids {
     @Id
     @NotNull
     @GeneratedValue(generator = "uuid")
@@ -33,43 +33,30 @@ public class Products {
 
     @Setter
     @NotNull
-    @JsonProperty("Name")
-    @Column(name = "name")
-    private String name;
+    @JsonProperty("ProductId")
+    @Column(name = "product_id")
+    private String productId;
 
     @Setter
     @NotNull
-    @JsonProperty("Details")
-    @Column(name = "details")
-    private String details;
+    @JsonProperty("BidPrice")
+    @Column(name = "bid_price")
+    private BigDecimal bidPrice;
 
     @Setter
     @NotNull
-    @JsonProperty("BiddingLastDate")
-    @Column(name = "bidding_last_date")
-    private LocalDateTime biddingLastDate;
-
-    @Setter
-    @NotNull
-    @JsonProperty("MinPrice")
-    @Column(name = "min_price")
-    private BigDecimal minPrice;
+    @Column(name = "bid_time")
+    private LocalDateTime bidTime = LocalDateTime.now();
 
     @Setter
     @NotNull
     @JsonProperty("Email")
-    @Column(name = "seller_email")
-    private String sellerEmail;
-
-    @Setter
-    @NotNull
-    @Column(name = "bid_status")
-    private boolean bidStatus = false;
+    @Column(name = "buyer_email")
+    private String buyerEmail;
 
     @Override
     public String toString() {
-        return MoreObjects.toStringHelper(this).add("id", id).add("name", name).add("details", details)
-                .add("biddingLastDate", biddingLastDate).add("minPrice", minPrice).add("sellerEmail", "<REMOVED>")
-                .add("bidStatus", bidStatus).toString();
+        return MoreObjects.toStringHelper(this).add("id", id).add("productId", productId).add("bidTime", bidTime)
+                .add("bidPrice", bidPrice).add("buyerEmail", "REMOVED").toString();
     }
 }
